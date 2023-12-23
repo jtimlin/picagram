@@ -1,8 +1,8 @@
 ---
-name: Frontend custom template
+name: Custom issue template
 about: Describe this issue template's purpose here.
 title: 'USER STORY: <TITLE>'
-labels: Frontend
+labels: ''
 assignees: jindah
 
 ---
