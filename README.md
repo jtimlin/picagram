@@ -436,3 +436,104 @@ to contain links to Home, Feed, Add Post, Sign Out and Profile page. It is fully
 set to enable better site navigation for a user and finally the site logo is a
 clickable link to the home page.
 
+<details>
+<summary>Logged Out Nav Screenshots</summary>
+
+![Logged Out Nav Dekstop](README_images/features/nav/logged-out-desk.png)
+![Logged Out Nav Mobile](README_images/features/nav/logged-out-m.png)
+
+</details>
+<details>
+<summary>Logged In Nav Screenshots</summary>
+
+![Logged In Nav Desktop](README_images/features/nav/logged-in-desk.png)
+![Logged In Nav Mobile](README_images/features/nav/logged-in-m.png)
+
+</details>
+
+[⏫ contents](#contents)
+
+### Feed Page
+
+This feed is only available to logged-in users and contains, all the posts, from
+all profiles they follow. Again using infintie scroll and listed by created
+date, in descending order. If a user is new or they haven't followed any profiles
+a message appears telling the user to 'get started by following other profiles'
+_(an example can be seen in the liked feed explanation)_.
+
+!['Feed' (following) Feed](README_images/features/feeds/feed.png)
+
+[⏫ contents](#contents)
+
+### Liked Feed
+
+Much like the feed described above this feed is only available to logged-in
+users. It displays all posts a user has liked. Again if a user is new or they
+haven't liked any posts yet a message appears telling the user to 'get started
+by liking some posts'.
+
+![Liked Feed](README_images/features/feeds/liked.png)
+![No posts message](README_images/features/feeds/no-posts-message.png)
+
+[⏫ contents](#contents)
+
+### Search Bar
+
+The search bar can be found above all feeds when a user is logged in. A user can
+use the search bar to filter feed results, if there are no posts found using
+this search filter a message is displayed.
+
+![Search Bar](README_images/features/feeds/search-bar.png)
+
+[⏫ contents](#contents)
+
+### Create Post Form
+
+A logged-in user can create a post using the "Add Post" button located in the navbar. Clicking on this button directs the user to the post creation form, where they can input content and upload an image. Both the image and content fields are mandatory for submitting a valid form. Upon successful submission, the user is redirected to the post details page for the newly created post.
+
+![Create Post Form Mobile](README_images/features/crud/create-m.png)
+![Create Post Form Desktop](README_images/features/crud/create.png)
+
+[⏫ contents](#contents)
+
+### Edit Post Form
+
+If a user is the owner of a post object, they will notice an additional settings button on the post, marked with a spanner icon for easy identification. Clicking on this button reveals the option to edit the post. Selecting the edit option redirects the user to the edit post form, which mirrors the create post form but is pre-filled with the existing post details. In this form, the user can make updates to the post details.
+
+![Settings Button](README_images/features/crud/post-settings.png)
+![Edit Post Form](README_images/features/crud/edit-post.png)
+
+[⏫ contents](#contents)
+
+### Delete Objects
+
+If a user owns a Post, they will find an additional settings button on the post, distinguished by a spanner icon. Clicking this button displays the option to edit the post. Upon selecting the edit option, the user is directed to the edit post form, which is similar to the create post form but pre-populated with the necessary post details. Here, the user can update the post details.
+
+If users own the comment, they see an 'X' icon next to their own comments, enabling them to delete their comment directly without any additional confirmation.
+
+![Delete Confirmation Modal](README_images/features/crud/modal.png)
+![Settings Modal Delete](README_images/features/crud/delete-option.png)
+
+[⏫ contents](#contents)
+
+### Post Details Page
+
+When a user clicks on a post in the feed, they are redirected to the post details page for that specific post. Here, users can view the post in full size, accompanied by a comments section below. If there are existing comments, users can read them. If a user is logged in, they have the option to interact with the post by liking it and leaving comments.
+
+-   #### Liking
+
+    On every post, a user will find a like button in the form of a 'heart'
+    icon. If the user is logged in they can click the button to like a post,
+    naturally, the icon changes in response to this action, and clicking the
+    button again will unlike the post. These actions in turn increment and
+    decrement the like count accordingly.
+
+-   #### Commenting
+
+    In addition to the liking button, there is a comments icon displaying the
+    number of comments next to it. If the user scrolls down they will be
+    presented with a comment form. Here the user can write a comment in order to
+    join the conversation of the post, by simply clicking the 'comment' button.
+    Once posted the user will be able to see their comment listed below the post
+    in order of most recent first. A user has the ability to delete the comment
+    if they wish.
