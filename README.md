@@ -10,7 +10,7 @@ Picagram is a social sharing app designed to provide users with a refined and ad
 
 ### Live Site
 
-Explore the live site on [Heroku](#).
+Explore the live site on [Heroku](https://picagram-ac5efc799683.herokuapp.com/).
 
 ### Project Stack
 
@@ -54,10 +54,7 @@ To get started with the Picagram app, follow these steps to clone the GitHub rep
     -   [Development](#deployment)
         -   [Agile Design](#agile-design)
             -   [Github Issues](#github-issues)
-                -   [Templates](#templates)
-                    -   [User Story Template](#user-story-template)
-                    -   [Bug Report](#bug-report)
-                    -   [Feature Request](#feature-request)
+                -   [Template](#template)
                 -   [Labels](#labels)
             -   [Product Backlog](#product-backlog)
             -   [Iterations](#iterations)
@@ -85,16 +82,9 @@ To get started with the Picagram app, follow these steps to clone the GitHub rep
         -   [CRUD Functionality](#crud-functionality)
         -   [Future Features](#future-features)
         -   [Reusable Components](#reusable-components)
-        -   [InfiniteScroll.js](#infinitescrolljs)
-        -   [Loader.js](#loaderjs)
-        -   [Avatar.js](#avatarjs)
-        -   [MoreModal.js](#morenmodaljs)
-        -   [ShareModal.js](#sharemodal.js)
-        -   [Post.js](#postjs)
-        -   [Comment.js](#commentjs)
-        -   [NavBar.js](#navbarjs)
     -   [Contexts/ Hooks](#contexts-hooks)
         -   [CurrentUserContext.js](#currentusercontextjs)
+        -   [ProfileDataContext.js](#profiledatacontextjs)
         -   [useRedirectUser.js](#useredirectuserjs)
     -   [Libraries/ Dependencies](#libraries-and-dependencies)
     -   [Testing](testing.md)
@@ -194,7 +184,8 @@ Instagram users often encounter issues with the presence of bots and the overwhe
 
 To aid in the design of the UI a wireframe was created.
 
-![Wireframe](README_images/ux/wireframe.png)
+![Wireframe](README_images/ux/wireframe_desktop.png)
+![Wireframe Mobile](README_images/ux/wireframe_mobile.png)
 
 [⏫ contents](#contents)
 
@@ -453,6 +444,18 @@ clickable link to the home page.
 
 [⏫ contents](#contents)
 
+### Feed
+
+The feed is where all site content lives. This feed acts also as the
+landing page feed, enabling users to search around all site content, from here
+users are able to discover each other's profiles and posts. The posts are listed
+by the date of creation. All feeds use infinite scroll technology in order to
+create a better user experience by loading posts only when needed.
+
+![Discover Feed](README_images/features/feeds/discover.png)
+
+[⏫ contents](#contents)
+
 ### Feed Page
 
 This feed is only available to logged-in users and contains, all the posts, from
@@ -537,3 +540,195 @@ When a user clicks on a post in the feed, they are redirected to the post detail
     Once posted the user will be able to see their comment listed below the post
     in order of most recent first. A user has the ability to delete the comment
     if they wish.
+
+[⏫ contents](#contents)
+
+### Profile Page
+
+Users have the ability to explore other users' profiles across the site by clicking on avatars or personal information displayed on posts. Each user's profile page features a profile card that showcases personal information they have added to their profile. This information may encompass:
+
+-   profile image
+-   joined date
+-   name
+-   bio
+
+_This information can be added via the settings menu, more on this [here](#update-profile)._
+
+Beneath the profile card is a feed of all posts created by the user in
+descending order of date of creation.
+
+![Profile Page Desktop](README_images/features/profile/profile-page.png)
+![Profile Page Mobile](README_images/features/profile/profile-page-m.png)
+
+-   #### Follow
+
+    If a user is on a profile which is not their own, they can find an
+    additional 'Follow' button. When clicking this button four things happen:
+
+    1. the users following count increases by one
+    2. the profiles follower count increases by one
+    3. the follow button switches to an unfollow button
+    4. the following profile posts are added to the 'Feed' feed.
+
+    Of course, clicking the button again will simply reverse these effects.
+
+    ![Follow Button](README_images/features/profile/follow.png)
+    ![Unfollow Button](README_images/features/profile/unfollow.png)
+
+### Update Profile
+
+To boost their profile visibility, users can update it by adding or modifying information. Simply go to the profile, click the settings spanner, and choose edit to access the update profile form, where additional details, including the profile image, can be added or updated.
+
+![Update Profile Form Desktop](README_images/features/profile/update-form.png)
+![Update Profile Form Mobile](README_images/features/profile/update-form-m.png)
+
+### Account Credentials
+
+For username or password updates, users can use the streamlined credentials form. Username validation prevents reuse, and passwords must match and meet length requirements.
+
+![Update Credentials Form](README_images/features/profile/credentials.png)
+
+[⏫ contents](#contents)
+
+### CRUD Functionality
+
+---
+
+Picagram features full Create, Read, Update, Delete functionality, for
+registered users, within the UI shown above in
+[current features](#current-features).
+
+-   #### Create:
+
+    Users can create posts, comments, likes and follows.
+
+-   #### Read:
+
+    Both registered and unregistered users have complete read functionality
+    across posts, profiles, and comments.
+
+-   #### Update:
+
+    Posts, profiles, and comments can be updated within the UI.
+
+-   #### Delete:
+    All user-owned objects can be deleted with the UI. Including, posts, comments
+    likes and follows.
+
+[⏫ contents](#contents)
+
+### Future Features
+
+---
+
+Picagram's initial release met its MVP goals within the planned timeframe. Future versions will introduce additional features, both short and long-term, to enhance the platform. Some upcoming features include:
+
+-   #### Reels
+
+    Explore a new way to share short, engaging videos with the Picagram community.
+
+-   #### Enhanced Direct Messaging
+
+    Enjoy improved communication with multimedia sharing and advanced messaging features.
+
+-   #### Event Integration
+
+    Stay connected by integrating events seamlessly into your Picagram experience.
+
+These features aim to provide a richer and more dynamic user experience on Picagram.
+
+[⏫ contents](#contents)
+
+## Reusable Components
+
+Dividing the UI into smaller React components boosts maintainability and efficiency. It enables focused development, component reusability, and easier issue resolution without affecting other parts. This approach results in a cleaner codebase and efficient production. Examples of reused components are provided below.
+
+### `Asset.js`
+
+This component, Asset.js, is responsible for enhancing user experience with images. It incorporates a spinner for loading and includes general styling improvements to optimize the visual presentation of images throughout the application.
+
+### `Avatar.js`
+
+The Avatar.js component is a key element in Picagram, acting as a clickable link to user profiles and adding a distinctive round styling to avatars. This attention to detail enhances both navigation and visual appeal, contributing to a cohesive design and an improved user experience.
+
+### `MoreModal.js`
+
+MoreModal introduces a modal feature designed to provide users with convenient access to various settings. It proves particularly useful when interacting with posts or managing profile-related configurations, enhancing user control and customization.
+
+### `NavBar.js`
+
+This component dynamically adjusts its appearance based on the user's login status. When logged in, it displays personalized features, while for logged-out users, authentication and registration options are presented. This responsive design ensures an optimal and streamlined navigation experience.
+
+### `NotFound.js`
+
+When users encounter a non-existent page, NotFound.js comes into play as a fundamental component, displaying a user-friendly 404 page. This component contributes to the overall user experience by guiding users gracefully through unexpected situations.
+
+### `ShareModal.js`
+
+The ShareModal.js component facilitates content sharing by providing users with a convenient way to share content across various platforms.
+
+[⏫ contents](#contents)
+
+## Contexts/ Hooks
+
+### `CurrentUserContext.js`
+
+The CurrentUserContext was taken from the Code Institute Moments React
+walkthrough project. It is used for handling the current user's information.
+`CurrentUserContext` is used to share the current user data in different
+components. There's also the `SetCurrentUserContext` which is used to provide a
+function to update the current user data.
+
+Additionally, there are the Axios interceptors which handle token refreshing.
+When making requests using `axiosReq` it checks if the token needs refreshing
+and automatically refreshes it when needed.
+
+### `ProfileDataContext.js`
+
+The ProfileDataContext was taken from the Code Institute Moments React
+walkthrough project.
+
+The ProfileDataContext.js file manages and shares profile-related data, including page profiles and popular profiles, along with functions for following and unfollowing profiles. It utilizes React context to facilitate efficient data sharing across components.
+
+### `useRedirectUser.js`
+
+A custom React hook, taken from Code Institute Moments React walkthrough
+project, which handles redirection based on the user's authentication status.
+The logic means that by simply adding a line of code you can redirect
+unauthenticated users away from parts of the site. For example, a logged-out user
+shouldn't be able to access a create post form.
+
+[⏫ contents](#contents)
+
+## Libraries and Dependencies
+
+- [react-bootstrap](https://react-bootstrap-v4.netlify.app/): Chosen for its ubiquity, Bootstrap expedites development and simplifies responsive design in Picagram. The library and extensive documentation provide valuable resources.
+
+- [react-router](https://reactrouter.com/en/main): Manages navigation in React applications, creating a dynamic and seamless user experience. Components like `<Route>` in `App.js` define and manage component routes.
+
+- [react-router-dom](https://reactrouter.com/en/main): Crucial for navigation and routing in Picagram, enabling basic routing for navbar and header links. Transforms the app into a Single Page Application (SPA) for an enhanced user experience.
+
+- [axios](https://axios-http.com/): A JavaScript library simplifying HTTP requests, crucial for fetching and posting data in Picagram.
+
+- [infinite-scroll](https://www.npmjs.com/package/react-infinite-scroll-component): Enhances Picagram with infinite scrolling, creating a smoother user experience by detecting scroll events and loading data at the page's bottom.
+
+- [jwt-decode](https://www.npmjs.com/package/jwt-decode): A JavaScript library decoding JSON Web Tokens (JWT) in web applications.
+
+- [react-responsive](https://www.npmjs.com/package/react-responsive): Facilitates responsive design by allowing components to render based on device characteristics.
+
+- [react-share](https://www.npmjs.com/package/react-share): Provides easy-to-use components for sharing content on various platforms, enhancing social interaction within Picagram.
+
+[⏫ Contents](#contents)
+
+## Bugs
+
+To view a list of all bug reports for the project both resolved and unresolved
+got to
+[Picagram Kanban](https://github.com/users/jindah/projects/5).
+
+### Resolved Bugs
+
+-   #### [BUG: React wont start #19](https://github.com/jindah/picagram/issues/19)
+-   #### [BUG: Posting doesnt post #21](https://github.com/jindah/picagram/issues/21)
+-   #### [BUG: Comment section not updating #22](https://github.com/jindah/picagram/issues/22)
+-   #### [BUG: Console warning about button as a descendant of button #25](https://github.com/jindah/picagram/issues/25)
