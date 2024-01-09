@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Grand+Hotel&family=Roboto:wght@400&display=swap');
+
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  font-family: "Roboto", sans-serif;
+  background-color: #000;
+  min-height: 100%;
+}
+
+.Content {
+  padding: 10px;
+  border-radius: 2px;
+  border: 1px solid #202020;
+  color: #707070; 
+}
+
+.ContentBlack {
+  background-color: #000;
+  padding: 10px;
+  border-radius: 2px;
+  border: 1px solid #202020;
+  color: #707070;
+}
+
+.Image {
+  max-height: 40vh;
+  max-width: 100%;
+  object-fit: contain;
+}
+  
+* {
+  box-sizing: border-box;
+}
+  
+a {
+  color: #555555;
+  text-decoration: none;
+}
+  
+a:hover {
+  text-decoration: none;
+  transition: color ease-in-out 0.3s;
+}
+  
+a:hover i {
+  transition: color ease-in-out 0.3s;
+}
+  
+i {
+  color: #bebebe;
+  font-size: 1.2rem;
+  padding: 10px;
+  vertical-align: middle;
+  width: 45px;
+}
+  
+i:hover {
+  cursor: pointer;
+  transition: color ease-in-out 0.3s;
+  color: #df8600;
+  background-color: none;
+}
+
+.NavCol {
+  padding-top: 30px;
+}
+
+.MidCol {
+  color: #cfced3;
+  border-left: 1px solid #202020;
+  min-height: 100%;
+  padding-top: 50px;
+  min-height: 100vh;
+}
+
+.ProfilesCol {
+  padding-top: 58px;
+}
+
+.Copyright {
+  color: #444444;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+@media only screen and (max-width: 767px) {
+  .NavCol {
+    padding-top: 10px;
+  }
+
+  .MidCol {
+    padding-top: 10px;
+  }
+
+  .ProfilesCol {
+    padding-top: 10px;
+  }
+}

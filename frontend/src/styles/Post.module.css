@@ -1,0 +1,49 @@
+.Post {
+    background-color: #000;
+    border: 1px solid #202020;
+    border-radius: 2px;
+    margin-bottom: 16px;
+    padding: 10px;
+    text-align: center;
+}
+
+.Post figure,
+  h5 {
+    margin: 0 0;
+}
+  
+.Heart {
+    color: #f85032;
+}
+
+.HeartOutline:hover {
+    color: #f85032;
+}
+
+.PostBar {
+    color: #858585;
+    display: flex;
+    align-items: flex-start;
+}
+
+.PostBarDark {
+    color: #444444;
+}
+
+.ProfileDate {
+    color: #4e4e4e;
+    font-size: 0.9rem;
+}
+
+.ProfileDateHover {
+    background-color: #000 !important;
+}
+
+.Comments:hover {
+    background-color: #000;
+}
+
+.boldText {
+    font-weight: bold;
+    margin-right: 5px;
+}
