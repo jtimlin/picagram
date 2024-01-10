@@ -732,3 +732,124 @@ got to
 -   #### [BUG: Posting doesnt post #21](https://github.com/jindah/picagram/issues/21)
 -   #### [BUG: Comment section not updating #22](https://github.com/jindah/picagram/issues/22)
 -   #### [BUG: Console warning about button as a descendant of button #25](https://github.com/jindah/picagram/issues/25)
+
+## Deployment
+
+### Github Cloning
+
+---
+
+Fork or clone this project from its
+[GitHub repository](https://github.com/jindah/picagram), follow the
+steps below:
+
+**1. Navigate to the Picagram repository, and click the green 'code'
+button.**
+
+**2. Once clicked, within the dropdown, fork or clone this project, here we will
+clone using the url.**
+
+**3. In your local IDE open your Git terminal**
+
+**4. Change your working directory to your preferred location.**
+
+**5. Next type the following command, the 'copied URL' is the URL taken form the
+Github repo.**
+
+    git clone https://github.com/jindah/picagram
+
+**6. Hit Enter to create the cloned repository.**
+
+[⏫ contents](#contents)
+
+### Heroku Deployment
+
+---
+
+The application was deployed using Heroku. Heroku simplifies the deployment
+process. With a few commands, you can deploy your application without the need
+to configure servers, networking, or infrastructure.
+
+In order to deploy Picagram to Heroku I followed these 8 steps:
+
+**1. Navigate to the Heroku dashboard. Click "New" and select "Create new
+app".**
+
+**2. Create an app name and select a region closest to you.**
+
+**3. Navigate to the 'Deploy' tab.**
+
+**4. Scroll to the 'Deployment Methods' section and select 'Connect to
+GitHub'.**
+
+**5. Once connected to GitHub, search for the repository in the 'Connect to
+GitHub' section, and click 'Connect'.**
+
+**6. I chose to enable 'Automatic Deploys'. In order to do so click the 'Enable
+Automatic Deploys' button.**
+
+**7. For manual deployment use the 'Manual Deploy' section by clicking 'Deploy
+Branch'.**
+
+**8. Click 'View' at the bottom of the 'Manual Deploy' section to view the
+deployed project.**
+
+[⏫ contents](#contents)
+
+## Credits
+
+### Tools
+
+---
+
+-   To create the ERD diagram and Wireframes - [Lucid Chart](https://lucid.app/)
+
+-   Default profile icon -
+    [Flaticon](https://www.flaticon.com/)
+
+-   Favicon creator - [Favicon.io](https://favicon.io/)
+
+-   To check responsivity across multiple devices -
+    [Am I Responsive](https://ui.dev/amiresponsive?url=https://craftltd-6c672c6a814e.herokuapp.com/)
+
+-   Post and profile images for mock data:
+
+    -   [Unsplash](https://unsplash.com/)
+
+-   Icons used throughout the site - [Font Awesome](https://fontawesome.com/)
+
+-   Font styles - [Google Fonts](https://fonts.google.com/)
+
+### Resources
+
+---
+
+-   [Code Institute](http://www.codeinstitute.net/) 'Moments' Walkthrough was
+    used throughout the build as a reference and for specific use cases, which
+    are documented below:
+
+    -   Current user context hook (`src/contexts/CurrentUserContext.js`)
+    -   The use of axios interceptors to refresh tokens
+        (`src/api/axiosDefaults.js`)
+    -   Redirect users based on authentication (`src/hooks/useRedirectUser.js`)
+    -   Form validation alerts (_site wide, example:_
+        `src/pages/forms/LoginForm.js`)
+
+-   Using useRef over useState to avoid 401 errors from onChange rerender
+
+-   Infinite Scroll -
+    [Npm react-infinite-scroll Docs](https://www.npmjs.com/package/react-infinite-scroll-component)
+
+-   React responsive to define smaller screen sizes for different navbars [react-responsive](https://www.npmjs.com/package/react-responsive)
+
+-   React Share for ShareModal [react-share](https://www.npmjs.com/package/react-share)
+
+**The below Docs were used extensively throughout the project build:**
+
+-   [React Docs](https://react.dev/reference/react)
+-   [React Router Docs](https://v5.reactrouter.com/web/api/Hooks/usehistory)
+    -   For assistance thoughout the project with built in hooks and router
+        elements (For example: `useHistory()`, `<Link />`, `useLocation()`,
+        `<NavLink />`)
+-   [React Router Bootstrap Docs](https://www.npmjs.com/package/react-router-bootstrap)
+-   [React Bootstrap 4 Docs](https://react-bootstrap-v4.netlify.app/)
