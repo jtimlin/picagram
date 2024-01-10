@@ -22,6 +22,7 @@ class Notification(models.Model):
     category = models.CharField(choices=CATEGORIES, max_length=50)
     item_id = models.IntegerField(null=True)
     is_read = models.BooleanField(default=False)
+    title = models.CharField(max_length=100)
     content = models.CharField(max_length=255)
 
     class Meta:

@@ -75,6 +75,13 @@ const NavBar = () => {
 
       <NavLink
       className={styles.NavLink}
+      to="/notifications"
+      onClick={handleSignOut}>
+      <i className="fa-regular fa-envelope"></i>Notifications
+      </NavLink>
+
+      <NavLink
+      className={styles.NavLink}
       to="/"
       onClick={handleSignOut}>
       <i className="fas fa-sign-out-alt"></i>Sign Out
@@ -158,6 +165,13 @@ const NavBar = () => {
       to="/posts/create"
       >
       <i className="fas fa-plus-square"></i>
+      </NavLink>
+
+      <NavLink
+      className={styles.NavLinkMob}
+      to="/notifications"
+      onClick={handleSignOut}>
+      <i className="fa-regular fa-envelope"></i>
       </NavLink>
 
       <NavLink

@@ -12,7 +12,7 @@ class NotificationSerializer(serializers.ModelSerializer):
 
     owner = serializers.ReadOnlyField(source="owner.username")
     sender = serializers.ReadOnlyField(source="sender.username")
-    sender_avatar = serializers.ReadOnlyField(
+    profile_image = serializers.ReadOnlyField(
         source="sender.profile.avatar.url"
     )
     item_id = serializers.ReadOnlyField()
@@ -30,7 +30,7 @@ class NotificationSerializer(serializers.ModelSerializer):
             "id",
             "owner",
             "sender",
-            "sender_avatar",
+            "profile_image",
             "sent_at",
             "item_id",
             "is_read",

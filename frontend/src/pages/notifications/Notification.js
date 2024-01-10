@@ -1,6 +1,6 @@
-mport React, { useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { axiosResponse } from "../../api/axiosDefaults";
+import { axiosRes } from "../../api/axiosDefaults";
 
 import Card from "react-bootstrap/Card";
 
@@ -31,7 +31,7 @@ const Notification = (props) => {
 
   const handleSetRead = async () => {
     try {
-      await axiosResponse.patch(`/notifications/${id}`, { is_read: !isRead });
+      await axiosRes.patch(`/notifications/${id}`, { is_read: !isRead });
       setNotifications((prevNotifications) => ({
         ...prevNotifications,
         results: prevNotifications.results.map((notification) => {
@@ -39,19 +39,19 @@ const Notification = (props) => {
         }),
       }));
     } catch (err) {
-      // console.log(err);
+      console.log(err);
     }
   };
 
   const handleDelete = async () => {
     try {
-      await axiosResponse.delete(`/notifications/${id}`);
+      await axiosRes.delete(`/notifications/${id}`);
       setNotifications((prevNotifications) => ({
         ...prevNotifications,
         results: prevNotifications.results.filter((notification) => notification.id !== id),
       }));
     } catch (err) {
-      // console.log(err);
+      console.log(err);
     } finally {
       showMessage("success", "Notification cleared.");
     }
