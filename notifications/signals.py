@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from .models import Notification
 from likes.models import Like
 from comments.models import Comment
-from follows.models import Follow
+from followers.models import Follower
 from posts.models import Post
 
 
@@ -53,7 +53,7 @@ def create_comment_notification(sender, instance, created, **kwargs):
         create_notification(**data)
 
 
-@receiver(post_save, sender=Follow)
+@receiver(post_save, sender=Follower)
 def create_follow_notification(sender, instance, created, **kwargs):
     if created:
         data = {
