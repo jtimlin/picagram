@@ -18,15 +18,14 @@ class Notification(models.Model):
         User, on_delete=models.CASCADE, related_name="notifications"
     )
     sender = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
-    sent_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(auto_now_add=True)
     category = models.CharField(choices=CATEGORIES, max_length=50)
     item_id = models.IntegerField(null=True)
     is_read = models.BooleanField(default=False)
-    title = models.CharField(max_length=100)
     content = models.CharField(max_length=255)
 
     class Meta:
-        ordering = ["-sent_at"]
+        ordering = ["-created_at"]
 
     def __str__(self):
         return (

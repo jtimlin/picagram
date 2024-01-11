@@ -14,7 +14,6 @@ def create_notification(**kwargs):
         sender=kwargs["sender"],
         category=kwargs["category"],
         item_id=kwargs["item_id"],
-        title=kwargs["title"],
         content=kwargs["content"],
     )
 
@@ -29,7 +28,6 @@ def create_like_notification(sender, instance, created, **kwargs):
             "sender": instance.owner,
             "category": "like",
             "item_id": instance.post.id,
-            "title": "You have a new like!",
             "content": f"{instance.owner.username} liked your post "
             f"{instance.post.title}",
         }
@@ -45,7 +43,6 @@ def create_comment_notification(sender, instance, created, **kwargs):
             "sender": instance.owner,
             "category": "comment",
             "item_id": instance.post.id,
-            "title": "You have a new comment!",
             "content": f"{instance.owner.username} commented on your post "
             f"{instance.post.title}",
         }
@@ -61,8 +58,7 @@ def create_follow_notification(sender, instance, created, **kwargs):
             "sender": instance.owner,
             "category": "follow",
             "item_id": instance.id,
-            "title": "You have a new follower!",
-            "content": f"{instance.owner.username} is now following you.",
+            "content": f"{instance.owner.username} started following you.",
         }
 
         create_notification(**data)
@@ -76,9 +72,8 @@ def create_new_post_notification(sender, instance, created, **kwargs):
             data = {
                 "owner": recipient,
                 "sender": instance.owner,
-                "category": "new_post",
+                "category": "posts",
                 "item_id": instance.id,
-                "title": "You have a new post!",
                 "content": f"{instance.owner.username} uploaded a new post.",
             }
 

@@ -7,22 +7,22 @@ from .models import Notification
 
 class NotificationSerializer(serializers.ModelSerializer):
     """Serializer for Notification model. Includes method for formatting
-    sent_at field for better readability.
+    created_at field for better readability.
     """
 
     owner = serializers.ReadOnlyField(source="owner.username")
     sender = serializers.ReadOnlyField(source="sender.username")
     profile_image = serializers.ReadOnlyField(
-        source="sender.profile.avatar.url"
+        source="sender.profile.image.url"
     )
     item_id = serializers.ReadOnlyField()
-    sent_at = serializers.SerializerMethodField()
+    created_at = serializers.SerializerMethodField()
 
-    def get_sent_at(self, obj):
-        if obj.sent_at > timezone.now() - timedelta(days=1):
-            return naturaltime(obj.sent_at)
+    def get_created_at(self, obj):
+        if obj.created_at > timezone.now() - timedelta(days=1):
+            return naturaltime(obj.created_at)
         else:
-            return obj.sent_at.strftime("%d %b %Y, %I:%M %p")
+            return obj.created_at.strftime("%d %b %Y, %I:%M %p")
 
     class Meta:
         model = Notification
@@ -31,10 +31,9 @@ class NotificationSerializer(serializers.ModelSerializer):
             "owner",
             "sender",
             "profile_image",
-            "sent_at",
+            "created_at",
             "item_id",
             "is_read",
-            "title",
             "content",
             "category",
         ]

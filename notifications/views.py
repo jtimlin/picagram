@@ -28,4 +28,4 @@ class NotificationDetail(generics.RetrieveUpdateDestroyAPIView):
 
     queryset = Notification.objects.all()
     serializer_class = NotificationSerializer
-    permission_classes = [permissions.IsAuthenticated, IsNotificationOwner]
+    permission_classes = [permissions.IsAuthenticated]
