@@ -76,7 +76,7 @@ const NavBar = () => {
       <NavLink
       className={styles.NavLink}
       to="/notifications"
-      onClick={handleSignOut}>
+      >
       <i className="fa-regular fa-envelope" />Notifications
       </NavLink>
 
@@ -170,7 +170,7 @@ const NavBar = () => {
       <NavLink
       className={styles.NavLinkMob}
       to="/notifications"
-      onClick={handleSignOut}>
+      >
       <i className="fa-regular fa-envelope" />
       </NavLink>
 
