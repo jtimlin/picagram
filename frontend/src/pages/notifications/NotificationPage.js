@@ -10,13 +10,10 @@ import Asset from "../../components/Asset";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import NotFound from "../../components/NotFound";
 
-
 const NotificationPage = ({ showMessage }) => {
   const [notifications, setNotifications] = useState({ results: [] });
   const currentUser = useCurrentUser();
   const [hasLoaded, setHasLoaded] = useState(false);
-
-  console.log(currentUser);
 
   useEffect(() => {
     const handleMount = async () => {
@@ -24,7 +21,7 @@ const NotificationPage = ({ showMessage }) => {
         const { data } = await axiosReq.get(`/notifications/`);
         setNotifications(data);
       } catch (err) {
-        console.log(err);
+        // console.log(err);
       }
       setHasLoaded(true);
     };

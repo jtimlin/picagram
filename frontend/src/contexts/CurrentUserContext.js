@@ -23,7 +23,7 @@ export const CurrentUserProvider = ({children}) => {
         const { data } = await axiosRes.get("dj-rest-auth/user/");
         setCurrentUser(data);
       } catch (err) {
-        console.log(err.response);
+        // console.log(err.response);
       }
     };
   
@@ -53,7 +53,7 @@ export const CurrentUserProvider = ({children}) => {
           return config;
         },
         (err) => {
-          return Promise.reject(err.response);
+          return Promise.reject(err);
         }
       );
   

@@ -91,6 +91,10 @@ i:hover {
 @media only screen and (max-width: 767px) {
   .NavCol {
     padding-top: 10px;
+
+  i {
+    padding: 0px;
+  }
   }
 
   .MidCol {

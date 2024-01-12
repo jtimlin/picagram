@@ -137,7 +137,6 @@ const Post = (props) => {
   };
 
 
-
   return (
     <Card className={styles.Post}>
       {isProfilePage ? (
