@@ -33,7 +33,7 @@ const NotificationPage = ({ showMessage }) => {
     <NotFound />
   ) : (
     <>
-      <h3>Your Notifications</h3>
+      <h4>Notifications</h4>
       {hasLoaded ? (
         notifications.results.length ? (
           <InfiniteScroll className="overflow-hidden"

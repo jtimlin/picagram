@@ -10,6 +10,7 @@ import ConfirmationModal from "../../components/ConfirmationModal";
 import Avatar from "../../components/Avatar";
 
 import appStyles from "../../App.module.css";
+import styles from "../../styles/Notifications.module.css"
 
 const Notification = (props) => {
   const {
@@ -56,7 +57,7 @@ const Notification = (props) => {
 
   return (
     <>
-      <Card className={`${appStyles.ContentBlack} mt-3 me-3`}>
+      <Card className={`${appStyles.ContentBlack} mt-3 me-3 ${isRead ? styles.ContentBlackRead : ''}`}>
         <Card.Header className="d-flex justify-content-between">
           <small className="">{sentAt}</small>      
           <span>
