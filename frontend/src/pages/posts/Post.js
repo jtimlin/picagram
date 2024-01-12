@@ -11,6 +11,7 @@ import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
 import { MoreModal } from "../../components/MoreModal";
 import ShareModal from "../../components/ShareModal";
+import ConfirmationModal from "../../components/ConfirmationModal";
 
 const Post = (props) => {
   const {
@@ -39,12 +40,16 @@ const Post = (props) => {
   const isPostPage = location.pathname.startsWith('/posts/');
   const isProfilePage = location.pathname.startsWith('/profiles/');
 
-  // State to manage the visibility of the ShareModal
+  // State to manage the visibility of the ShareModal and construct the share URL
   const [isModalOpen, setIsModalOpen] = useState(false);
-  // Construct the share URL
   const shareUrl = `${window.location.origin}/posts/${id}`;
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
+
+  const [showModal, setShowModal] = useState(false);
+  const handleShowModal = () => {
+    setShowModal(true);
+  };
 
   // Function to navigate to the post edit page
   const handleEdit = () => {
@@ -53,16 +58,11 @@ const Post = (props) => {
 
   // Function to handle post deletion
   const handleDelete = async () => {
-    // Display a confirmation dialog
-    const isConfirmed = window.confirm('Are you sure you want to delete this post?');
-
-    if (isConfirmed) {
-      try {
-        await axiosRes.delete(`/posts/${id}/`);
-        history.push('/');
-      } catch (err) {
-        console.error(err);
-      }
+    try {
+      await axiosRes.delete(`/posts/${id}/`);
+      history.push('/');
+    } catch (err) {
+      // console.error(err);
     }
   };
 
@@ -125,7 +125,20 @@ const Post = (props) => {
             <span>{owner} • {updated_at}</span>
             </Link>
             {/* Render MoreModal component for post owner to edit or delete the post */}
-            {is_owner && <MoreModal handleEdit={handleEdit} handleDelete={handleDelete}/>}
+            {is_owner && (
+              <>
+                <MoreModal handleEdit={handleEdit} handleDelete={() => handleShowModal()} />
+
+                {/* ConfirmationModal component */}
+                <ConfirmationModal
+                  show={showModal}
+                  setShow={setShowModal}
+                  handleMethod={handleDelete}
+                  body="Delete Post!"
+                  type="dark"
+                />
+              </>
+            )}
         </div>
         </Card.Body>
       <Link to={`/posts/${id}`}>

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import styles from "../../styles/Comment.module.css";
 import CommentEditForm from "./CommentEditForm";
+import ConfirmationModal from "../../components/ConfirmationModal";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { axiosRes } from "../../api/axiosDefaults";
 
@@ -22,6 +23,12 @@ const Comment = (props) => {
   const [showEditForm, setShowEditForm] = useState(false);
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
+
+  const [showModal, setShowModal] = useState(false);
+
+  const handleShowModal = () => {
+    setShowModal(true);
+  };
 
   // Handle comment deletion
   const handleDelete = async () => {
@@ -72,7 +79,7 @@ const Comment = (props) => {
               {/* Render edit and delete icons for comment owner */}
               {is_owner ? (
                 <>
-                  <span onClick={handleDelete} className={styles.editDelete}>
+                  <span onClick={handleShowModal} className={styles.editDelete}>
                     <i className="fa-solid fa-xmark"></i>
                   </span>
                   <span
@@ -90,6 +97,13 @@ const Comment = (props) => {
           )}
         </Media.Body>
       </Media>
+      <ConfirmationModal
+        show={showModal}
+        setShow={setShowModal}
+        handleMethod={handleDelete}
+        body="Delete comment!"
+        type="dark"
+      />
     </div>
   );
 };

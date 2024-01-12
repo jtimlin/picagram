@@ -3,9 +3,13 @@ import { Link } from "react-router-dom";
 import { axiosRes } from "../../api/axiosDefaults";
 
 import Card from "react-bootstrap/Card";
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Tooltip from 'react-bootstrap/Tooltip';
 
 import ConfirmationModal from "../../components/ConfirmationModal";
 import Avatar from "../../components/Avatar";
+
+import appStyles from "../../App.module.css";
 
 const Notification = (props) => {
   const {
@@ -17,7 +21,6 @@ const Notification = (props) => {
     content,
     category,
     setNotifications,
-    showMessage,
   } = props;
   const [showModal, setShowModal] = useState(false);
 
@@ -35,7 +38,7 @@ const Notification = (props) => {
         }),
       }));
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 
@@ -47,51 +50,52 @@ const Notification = (props) => {
         results: prevNotifications.results.filter((notification) => notification.id !== id),
       }));
     } catch (err) {
-      console.log(err);
-    } finally {
-      showMessage("success", "Notification cleared.");
+      // console.log(err);
     }
   };
 
   return (
     <>
-      <Card className="mt-3 me-3 border-secondary" bg="light">
+      <Card className={`${appStyles.ContentBlack} mt-3 me-3`}>
         <Card.Header className="d-flex justify-content-between">
-        {isRead ? (
-          <>
-            <i className="fa-solid fa-envelope me-2"></i>
-            <span className="position-absolute top-0 start-100 translate-middle p-2 bg-danger rounded-circle">
-              <span className="visually-hidden">New alerts</span>
-            </span>
-          </>
-        ) : null}
-
-          <small className="text-muted">{sentAt}             
+          <small className="">{sentAt}</small>      
           <span>
-              <span
-                aria-label="Clear"
-                title="Clear Notification"
-                onClick={handleShowModal}
+              <OverlayTrigger
+                placement="top"
+                overlay={<Tooltip>Clear Notification!</Tooltip>}
               >
-                <i class="fa-regular fa-trash-can"></i>
-              </span>
+                <span
+                  aria-label="Clear"
+                  title="Clear Notification"
+                  onClick={handleShowModal}
+                >
+                  <i className="fa-regular fa-trash-can" />
+                </span>
+              </OverlayTrigger>
               {isRead ? (
-                <span onClick={handleSetRead}>
-                  <i class="fa-solid fa-circle-check"></i>
-                </span>
+                <OverlayTrigger
+                placement="top"
+                overlay={<Tooltip>Mark as unread!</Tooltip>}
+                >
+                  <span onClick={handleSetRead}>
+                    <i className="fa-solid fa-circle-check" />
+                  </span>
+                </OverlayTrigger>
               ) : (
-                <span onClick={handleSetRead}>
-                  <i class="fa-regular fa-circle-check"></i>
-                </span>
+                <OverlayTrigger
+                placement="top"
+                overlay={<Tooltip>Mark as read!</Tooltip>}
+                >
+                  <span onClick={handleSetRead}>
+                    <i className="fa-regular fa-circle-check" />
+                  </span>
+                </OverlayTrigger>
               )}
-            </span></small>
+            </span>
         </Card.Header>
         <Card.Body>
           <Card.Text>
-            <Avatar src={senderAvatar} height={30} /> {content}{category !== "follow" && ( <Link to={`/posts/${itemId}`} className="ms-sm-2">• Go to post</Link> )}
-          </Card.Text>
-          <Card.Text className="d-flex justify-content-between flex-wrap gap-2">
-
+            <Avatar src={senderAvatar} height={30} /> {content}{category !== "follow" && ( <Link to={`/posts/${itemId}`} className="ms-sm-2">• Go to post...</Link> )}
           </Card.Text>
         </Card.Body>
       </Card>
@@ -100,6 +104,7 @@ const Notification = (props) => {
         show={showModal}
         setShow={setShowModal}
         handleMethod={handleDelete}
+        body="Clear notification!"
         type="dark"
       />
     </>

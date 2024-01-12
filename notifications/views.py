@@ -12,7 +12,7 @@ class NotificationList(generics.ListAPIView):
     serializer_class = NotificationSerializer
     permission_classes = [permissions.IsAuthenticated]
     filter_backends = [filters.OrderingFilter]
-    ordering_fields = ["sent_at", "is_read"]
+    ordering_fields = ["created_at", "is_read"]
 
     def get_queryset(self):
         return Notification.objects.filter(owner=self.request.user)
@@ -28,4 +28,4 @@ class NotificationDetail(generics.RetrieveUpdateDestroyAPIView):
 
     queryset = Notification.objects.all()
     serializer_class = NotificationSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated, IsNotificationOwner]

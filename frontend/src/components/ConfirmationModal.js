@@ -13,7 +13,7 @@ const ConfirmationModal = ({ handleMethod, show, setShow, body, type }) => {
                 Cancel
               </Button>
               <Button variant={type} size="sm" onClick={handleMethod}>
-                Clear notification!
+                {body}
               </Button>
             </ButtonGroup>
           </div>
