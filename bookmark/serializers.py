@@ -12,7 +12,7 @@ class BookmarkSerializer(serializers.ModelSerializer):
     class Meta:
         model = Bookmark
         fields = [
-            'id', 'created_at', 'owner', 'post'
+            'id', 'created_at', 'owner', 'post',
         ]
 
     def create(self, validated_data):
@@ -21,4 +21,4 @@ class BookmarkSerializer(serializers.ModelSerializer):
         except IntegrityError:
             raise serializers.ValidationError({
                 'detail': 'possible duplicate'
-            })    
+            })

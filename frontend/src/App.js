@@ -68,11 +68,11 @@ function App() {
             />
             <Route
               exact
-              path="/liked"
+              path="/bookmarked"
               render={() => (
                 <PostsPage
-                  message="No results found. Adjust the search keyword or like a post."
-                  filter={`likes__owner__profile=${profile_id}&ordering=-likes__created_at&`}
+                  message="No bookmarked posts found. Bookmark some posts to see them here."
+                  filter={`bookmark__owner__profile=${profile_id}&ordering=-bookmark__created_at&`}
                 />
               )}
             />

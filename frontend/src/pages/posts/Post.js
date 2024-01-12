@@ -27,6 +27,8 @@ const Post = (props) => {
     image,
     updated_at,
     setPosts,
+    bookmark_count,
+    bookmark_id,
   } = props;
 
   const currentUser = useCurrentUser();
@@ -99,6 +101,42 @@ const Post = (props) => {
       // console.log(err);
     }
   };
+  
+  // Function to bookmark a post
+  const handleBookmark = async () => {
+    try {
+      const { data } = await axiosRes.post("/bookmark/", { post: id });
+      setPosts((prevPosts) => ({
+        ...prevPosts,
+        results: prevPosts.results.map((post) => {
+          return post.id === id
+            ? { ...post, bookmark_count: bookmark_count + 1, bookmark_id: data.id }
+            : post;
+        }),
+      }));
+    } catch (err) {
+      console.error("Error bookmarking post:", err);
+    }
+  };
+
+  // Function to remove bookmark
+  const handleUnBookmark = async () => {
+    try {
+      await axiosRes.delete(`/bookmark/${bookmark_id}/`);
+      setPosts((prevPosts) => ({
+        ...prevPosts,
+        results: prevPosts.results.map((post) => {
+          return post.id === id
+            ? { ...post, bookmark_count: bookmark_count - 1, bookmark_id: null }
+            : post;
+        }),
+      }));
+    } catch (err) {
+      console.error("Error removing bookmark:", err);
+    }
+  };
+
+
 
   return (
     <Card className={styles.Post}>
@@ -169,6 +207,41 @@ const Post = (props) => {
               <i className="far fa-heart" />
             </OverlayTrigger>
           )}
+
+          {is_owner ? (
+            <OverlayTrigger
+              placement="top"
+              overlay={<Tooltip>You can find your own posts under Profile!</Tooltip>}
+            >
+              <i className="fa-regular fa-bookmark" />
+            </OverlayTrigger>
+          ) : bookmark_id ? (
+            <span onClick={handleUnBookmark}>
+              <OverlayTrigger
+              placement="top"
+              overlay={<Tooltip>Remove from bookmarks!</Tooltip>}
+              >
+              <i className={`fa-solid fa-bookmark`} />
+              </OverlayTrigger>
+            </span>
+          ) : currentUser ? (
+            <span onClick={handleBookmark}>
+              <OverlayTrigger
+              placement="top"
+              overlay={<Tooltip>Save post!</Tooltip>}
+              >
+              <i className={`fa-regular fa-bookmark`} />
+              </OverlayTrigger>
+            </span>
+          ) : (
+            <OverlayTrigger
+              placement="top"
+              overlay={<Tooltip>Log in to save posts!</Tooltip>}
+            >
+              <i className="fa-regular fa-bookmark" />
+            </OverlayTrigger>
+          )}
+
           <Link to={`/posts/${id}`}>
             {isPostPage ? (
               <OverlayTrigger

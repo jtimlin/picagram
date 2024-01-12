@@ -37,7 +37,7 @@ const NavBar = () => {
     <>
       <Link to="/" className={styles.picagramLogo}>
       <Navbar.Brand className={styles.picagramLogo}>
-      <i className="fa-solid fa-camera-retro"></i> Picagram
+      <i className="fa-solid fa-camera-retro" />Picagram
       </Navbar.Brand>
       </Link>
 
@@ -46,7 +46,7 @@ const NavBar = () => {
       activeClassName={styles.Active}
       to="/"
       >
-      <i className="fa-solid fa-house"></i> Home
+      <i className="fa-solid fa-house" />Home
       </NavLink>
 
       <NavLink
@@ -54,15 +54,15 @@ const NavBar = () => {
       activeClassName={styles.Active}
       to="/feed"
       >
-      <i className="fas fa-stream"></i>Feed
+      <i className="fas fa-stream" />Feed
       </NavLink>
       
       <NavLink
       className={styles.NavLink}
       activeClassName={styles.Active}
-      to="/liked"
+      to="/bookmarked"
       >
-      <i className="fas fa-heart"></i>Liked
+      <i className="fa-solid fa-bookmark" />Saved Posts
       </NavLink>
 
       <NavLink
@@ -70,21 +70,21 @@ const NavBar = () => {
       activeClassName={styles.Active}
       to="/posts/create"
       >
-      <i className="fas fa-plus-square"></i>Add Post
+      <i className="fas fa-plus-square" />Add Post
       </NavLink>
 
       <NavLink
       className={styles.NavLink}
       to="/notifications"
       onClick={handleSignOut}>
-      <i className="fa-regular fa-envelope"></i>Notifications
+      <i className="fa-regular fa-envelope" />Notifications
       </NavLink>
 
       <NavLink
       className={styles.NavLink}
       to="/"
       onClick={handleSignOut}>
-      <i className="fas fa-sign-out-alt"></i>Sign Out
+      <i className="fas fa-sign-out-alt" />Sign Out
       </NavLink>
 
       <NavLink
@@ -102,7 +102,7 @@ const NavBar = () => {
     <>
       <Link to="/" className={styles.picagramLogo}>
       <Navbar.Brand className={styles.picagramLogo}>
-      <i className="fa-solid fa-camera-retro"></i> Picagram
+      <i className="fa-solid fa-camera-retro" />Picagram
       </Navbar.Brand>
       </Link>
 
@@ -111,7 +111,7 @@ const NavBar = () => {
       activeClassName={styles.Active}
       to="/"
       >
-      <i className="fa-solid fa-house"></i> Home
+      <i className="fa-solid fa-house" />Home
       </NavLink>
 
       <NavLink
@@ -119,7 +119,7 @@ const NavBar = () => {
       activeClassName={styles.Active}
       to="/login"
       >
-      <i className="fa-solid fa-arrow-right-to-bracket"></i> Log In
+      <i className="fa-solid fa-arrow-right-to-bracket" />Log In
       </NavLink>
 
       <NavLink
@@ -127,7 +127,7 @@ const NavBar = () => {
       activeClassName={styles.Active}
       to="/signup"
       >
-      <i className="fa-solid fa-signature"></i> Sign Up
+      <i className="fa-solid fa-signature" />Sign Up
       </NavLink>
     </>
     );
@@ -140,7 +140,7 @@ const NavBar = () => {
       activeClassName={styles.Active}
       to="/"
       >
-      <i className="fa-solid fa-house"></i>
+      <i className="fa-solid fa-house" />
       </NavLink>
 
       <NavLink
@@ -148,15 +148,15 @@ const NavBar = () => {
       activeClassName={styles.Active}
       to="/feed"
       >
-      <i className="fas fa-stream"></i>
+      <i className="fas fa-stream" />
       </NavLink>
       
       <NavLink
       className={styles.NavLinkMob}
       activeClassName={styles.Active}
-      to="/liked"
+      to="/bookmarked"
       >
-      <i className="fas fa-heart"></i>
+      <i className="fa-solid fa-bookmark" />
       </NavLink>
 
       <NavLink
@@ -164,21 +164,21 @@ const NavBar = () => {
       activeClassName={styles.Active}
       to="/posts/create"
       >
-      <i className="fas fa-plus-square"></i>
+      <i className="fas fa-plus-square" />
       </NavLink>
 
       <NavLink
       className={styles.NavLinkMob}
       to="/notifications"
       onClick={handleSignOut}>
-      <i className="fa-regular fa-envelope"></i>
+      <i className="fa-regular fa-envelope" />
       </NavLink>
 
       <NavLink
       className={styles.NavLinkMob}
       to="/"
       onClick={handleSignOut}>
-      <i className="fas fa-sign-out-alt"></i>
+      <i className="fas fa-sign-out-alt" />
       </NavLink>
 
       <NavLink
