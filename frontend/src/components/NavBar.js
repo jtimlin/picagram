@@ -199,7 +199,7 @@ const NavBar = () => {
       activeClassName={styles.Active}
       to="/"
       >
-      <i className="fa-solid fa-house"></i>
+      <i className="fa-solid fa-house" />
       </NavLink>
 
       <NavLink
@@ -207,7 +207,7 @@ const NavBar = () => {
       activeClassName={styles.Active}
       to="/login"
       >
-      <i className="fa-solid fa-arrow-right-to-bracket"></i> Log In
+      <i className="fa-solid fa-arrow-right-to-bracket" />
       </NavLink>
 
       <NavLink
@@ -215,7 +215,7 @@ const NavBar = () => {
       activeClassName={styles.Active}
       to="/signup"
       >
-      <i className="fa-solid fa-signature"></i> Sign Up
+      <i className="fa-solid fa-signature" />
       </NavLink>
     </>
     );

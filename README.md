@@ -152,8 +152,6 @@ Instagram users often encounter issues with the presence of bots and the overwhe
 
 - 11. As a user, I want to view a list of all posts to have an overview of posts and easily select one to view more closely. [User Story 11](https://github.com/jindah/picagram/issues/11)
 
-- 16. As a user, I want to view the "most liked" posts so that I can engage with it. [User Story 16](https://github.com/jindah/picagram/issues/16)
-
 - 17. As a user, I want to actively participate in discussions by commenting on posts. Additionally, as a non-registered user, I want to read comments to follow the conversation. [User Story 17](https://github.com/jindah/picagram/issues/17)
 
 - 18. As a user, I can search each accessible feed to filter the lists of posts. [User Story 18](https://github.com/jindah/picagram/issues/18)
@@ -175,6 +173,10 @@ Instagram users often encounter issues with the presence of bots and the overwhe
 - 14. As a registered user, I can view the list of 'Most Followed' accounts so that I can discover popular profiles. [User Story 14](https://github.com/jindah/picagram/issues/14)
 
 - 15. As a registered user, I can view a list of all posts I have liked so that I can see my favorite posts. [User Story 15](https://github.com/jindah/picagram/issues/15)
+
+- 26. As a registered user, I want to be able to read notifications so that I can stay informed about interactions with my posts, such as likes or comments. [User Story 26](https://github.com/jindah/picagram/issues/26)
+
+- 27. As a registered user, I want to be able to manage bookmarks so that I can easily access and organize content that I find interesting or important. [User Story 27](https://github.com/jindah/picagram/issues/27)
 
 [⏫ contents](#contents)
 
