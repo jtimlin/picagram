@@ -52,8 +52,12 @@
   color: #cfced3; 
 }
 
+.NavLinkProfile {
+  padding: 10px;
+}
+
 .NavLinkMob {
-  padding: 5px;
+  padding: 0px;
   text-decoration: none;
   color: #cfced3; 
 }

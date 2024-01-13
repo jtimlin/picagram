@@ -25,7 +25,9 @@ class PostList(generics.ListCreateAPIView):
     filterset_fields = [
         'owner__followed__owner__profile',
         'likes__owner__profile',
+        'bookmark__owner__profile',
         'owner__profile',
+        'bookmark',
     ]
     search_fields = [
         'owner__username',
@@ -36,6 +38,7 @@ class PostList(generics.ListCreateAPIView):
         'likes_count',
         'comments_count',
         'likes__created_at',
+        'bookmark__created_at',
     ]
 
     def perform_create(self, serializer):

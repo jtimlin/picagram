@@ -72,7 +72,7 @@ function App() {
               render={() => (
                 <PostsPage
                   message="No bookmarked posts found. Bookmark some posts to see them here."
-                  filter={`bookmark__owner__profile=${profile_id}&ordering=-bookmark__created_at&`}
+                  filter={`bookmark__owner=${profile_id}&ordering=-bookmark__created_at&`}
                 />
               )}
             />

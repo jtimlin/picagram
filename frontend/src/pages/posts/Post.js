@@ -27,7 +27,6 @@ const Post = (props) => {
     image,
     updated_at,
     setPosts,
-    bookmark_count,
     bookmark_id,
   } = props;
 
@@ -110,7 +109,7 @@ const Post = (props) => {
         ...prevPosts,
         results: prevPosts.results.map((post) => {
           return post.id === id
-            ? { ...post, bookmark_count: bookmark_count + 1, bookmark_id: data.id }
+            ? { ...post, bookmark_id: data.id }
             : post;
         }),
       }));
@@ -127,7 +126,7 @@ const Post = (props) => {
         ...prevPosts,
         results: prevPosts.results.map((post) => {
           return post.id === id
-            ? { ...post, bookmark_count: bookmark_count - 1, bookmark_id: null }
+            ? { ...post, bookmark_id: null }
             : post;
         }),
       }));
