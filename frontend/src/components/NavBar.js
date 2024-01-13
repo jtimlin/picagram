@@ -75,6 +75,7 @@ const NavBar = () => {
 
       <NavLink
       className={styles.NavLink}
+      activeClassName={styles.Active}
       to="/notifications"
       >
       <i className="fa-regular fa-envelope" />Notifications
@@ -169,6 +170,7 @@ const NavBar = () => {
 
       <NavLink
       className={styles.NavLinkMob}
+      activeClassName={styles.Active}
       to="/notifications"
       >
       <i className="fa-regular fa-envelope" />

@@ -1,6 +1,6 @@
 # Picagram
 
-![Picagram](README_images/responsive.png)
+![Picagram](readme_images/responsive.png)
 
 ## Introduction
 
@@ -68,7 +68,8 @@ To get started with the Picagram app, follow these steps to clone the GitHub rep
             -   [Navbar](#navbar)
             -   [Header](#header)
             -   [Feed Page](#feed-page)
-            -   [Liked Page](#liked-page)
+            -   [Saved Posts](#saved-posts)
+            -   [Notifications](#notifications)
             -   [Search Bar](#search-bar)
             -   [Create Post](#create-post-form)
             -   [Edit Post](#edit-post-form)
@@ -186,8 +187,8 @@ Instagram users often encounter issues with the presence of bots and the overwhe
 
 To aid in the design of the UI a wireframe was created.
 
-![Wireframe](README_images/ux/wireframe_desktop.png)
-![Wireframe Mobile](README_images/ux/wireframe_mobile.png)
+![Wireframe](readme_images/ux/wireframe_desktop.png)
+![Wireframe Mobile](readme_images/ux/wireframe_mobile.png)
 
 [⏫ contents](#contents)
 
@@ -237,7 +238,7 @@ library.
 
 The logo for the Picagram app features a unique design created using the 'Grand Hotel' font and an icon from Font Awesome named 'fa-camera-retro'. The 'Grand Hotel' font adds a touch of elegance and style to the text, while the camera-retro icon conveys the essence of photography and visual content sharing. The combination creates a distinctive and visually appealing logo that reflects the app's focus on capturing and sharing moments.
 
-![Logo](README_images/ux/logo.png)
+![Logo](readme_images/ux/logo.png)
 
 [⏫ contents](#contents)
 
@@ -246,11 +247,9 @@ The logo for the Picagram app features a unique design created using the 'Grand 
 An entity relationship diagram was created to assist in the visualization of the
 database structure. This visualization was important to clarify what data would
 be needed in order to provide the functionality desired within the application.
-Below is an image of the Created ERD with the relationships between models. A
-full rundown of the ERD and the database models within can be found in the
-[Picagram-API README/Database ERD](#)
+Below is an image of the Created ERD with the relationships between models.
 
-![Picagram API ERD](README_images/api-erd.png)
+![Picagram API ERD](readme_images/api-erd.png)
 
 [⏫ contents](#contents)
 
@@ -393,8 +392,8 @@ automatically move the issue into the 'Done' column.
 
 Upon visiting the site, users are greeted with a straightforward navbar offering options such as home, login, and signup. A header provides concise information, encouraging non-registered users to sign up. Below, a feed displays all posts from the site, accompanied by the 'User Suggestions' component, offering non-registered users the opportunity to navigate the site and access information.
 
-![Landing Page Desktop](README_images/features/home/landing-page.png)
-![Landing Page Mobile](README_images/features/home/landing-page-m.png)
+![Landing Page Desktop](readme_images/features/home/landing-page.png)
+
 
 [⏫ contents](#contents)
 
@@ -405,7 +404,7 @@ to sign-up with just a username and password confirmation. If a registered user
 finds themselves on the signup form there is also a login form link at the
 bottom to make navigate to the correct form easily.
 
-![Sign Up Form](README_images/features/home/sign-up-form.png)
+![Sign Up Form](readme_images/features/home/sign-up-form.png)
 
 [⏫ contents](#contents)
 
@@ -416,7 +415,7 @@ login into their account quickly via a simple username and password combination.
 For non-registered users, there is a small link to navigate to the correct
 sign-up form if they have navigated to the wrong page.
 
-![Login Form](README_images/features/home/login-form.png)
+![Login Form](readme_images/features/home/login-form.png)
 
 [⏫ contents](#contents)
 
@@ -432,21 +431,21 @@ clickable link to the home page.
 <details>
 <summary>Logged Out Nav Screenshots</summary>
 
-![Logged Out Nav Dekstop](README_images/features/nav/logged-out-desk.png)
-![Logged Out Nav Mobile](README_images/features/nav/logged-out-m.png)
+![Logged Out Nav Desktop](readme_images/features/nav/logged-out-desk.png)
+
 
 </details>
 <details>
 <summary>Logged In Nav Screenshots</summary>
 
-![Logged In Nav Desktop](README_images/features/nav/logged-in-desk.png)
-![Logged In Nav Mobile](README_images/features/nav/logged-in-m.png)
+![Logged In Nav Desktop](readme_images/features/nav/logged-in-desk.png)
+
 
 </details>
 
 [⏫ contents](#contents)
 
-### Feed
+### Home Feed
 
 The feed is where all site content lives. This feed acts also as the
 landing page feed, enabling users to search around all site content, from here
@@ -454,7 +453,7 @@ users are able to discover each other's profiles and posts. The posts are listed
 by the date of creation. All feeds use infinite scroll technology in order to
 create a better user experience by loading posts only when needed.
 
-![Discover Feed](README_images/features/feeds/discover.png)
+![Home Feed](readme_images/features/feeds/home.png)
 
 [⏫ contents](#contents)
 
@@ -464,21 +463,27 @@ This feed is only available to logged-in users and contains, all the posts, from
 all profiles they follow. Again using infintie scroll and listed by created
 date, in descending order. If a user is new or they haven't followed any profiles
 a message appears telling the user to 'get started by following other profiles'
-_(an example can be seen in the liked feed explanation)_.
 
-!['Feed' (following) Feed](README_images/features/feeds/feed.png)
+!['Feed' (following) Feed](readme_images/features/feeds/feed.png)
 
 [⏫ contents](#contents)
 
-### Liked Feed
+### Saved Posts
 
 Much like the feed described above this feed is only available to logged-in
-users. It displays all posts a user has liked. Again if a user is new or they
-haven't liked any posts yet a message appears telling the user to 'get started
-by liking some posts'.
+users. It displays all posts a user has saved. Again if a user is new or they
+haven't saved any posts yet a message appears telling the user to 'you havent saved any posts'.
+Underneath the post users kan find a bookmark button that changes color when user bookmarks a post.
 
-![Liked Feed](README_images/features/feeds/liked.png)
-![No posts message](README_images/features/feeds/no-posts-message.png)
+![Saved Posts](readme_images/features/feeds/saved.png)
+
+[⏫ contents](#contents)
+
+### Notifications
+
+Accessible to logged-in users, our Notification system keeps you updated on key activities. Receive instant alerts for new followers, stay in the loop with connections' latest posts, and get notified about likes on your own posts. The user-friendly interface allows easy management, with customizable settings for a personalized experience. Visual cues help quickly identify notification types.
+
+![Notifications](readme_images/features/feeds/notifications.png)
 
 [⏫ contents](#contents)
 
@@ -488,7 +493,7 @@ The search bar can be found above all feeds when a user is logged in. A user can
 use the search bar to filter feed results, if there are no posts found using
 this search filter a message is displayed.
 
-![Search Bar](README_images/features/feeds/search-bar.png)
+![Search Bar](readme_images/features/feeds/search-bar.png)
 
 [⏫ contents](#contents)
 
@@ -496,8 +501,7 @@ this search filter a message is displayed.
 
 A logged-in user can create a post using the "Add Post" button located in the navbar. Clicking on this button directs the user to the post creation form, where they can input content and upload an image. Both the image and content fields are mandatory for submitting a valid form. Upon successful submission, the user is redirected to the post details page for the newly created post.
 
-![Create Post Form Mobile](README_images/features/crud/create-m.png)
-![Create Post Form Desktop](README_images/features/crud/create.png)
+![Create Post Form Desktop](readme_images/features/crud/create.png)
 
 [⏫ contents](#contents)
 
@@ -505,8 +509,8 @@ A logged-in user can create a post using the "Add Post" button located in the na
 
 If a user is the owner of a post object, they will notice an additional settings button on the post, marked with a spanner icon for easy identification. Clicking on this button reveals the option to edit the post. Selecting the edit option redirects the user to the edit post form, which mirrors the create post form but is pre-filled with the existing post details. In this form, the user can make updates to the post details.
 
-![Settings Button](README_images/features/crud/post-settings.png)
-![Edit Post Form](README_images/features/crud/edit-post.png)
+![Settings Button](readme_images/features/crud/post-settings.png)
+![Edit Post Form](readme_images/features/crud/edit-post.png)
 
 [⏫ contents](#contents)
 
@@ -516,8 +520,8 @@ If a user owns a Post, they will find an additional settings button on the post,
 
 If users own the comment, they see an 'X' icon next to their own comments, enabling them to delete their comment directly without any additional confirmation.
 
-![Delete Confirmation Modal](README_images/features/crud/modal.png)
-![Settings Modal Delete](README_images/features/crud/delete-option.png)
+![Delete Confirmation Modal](readme_images/features/crud/modal.png)
+![Settings Modal Delete](readme_images/features/crud/delete-option.png)
 
 [⏫ contents](#contents)
 
@@ -559,8 +563,8 @@ _This information can be added via the settings menu, more on this [here](#updat
 Beneath the profile card is a feed of all posts created by the user in
 descending order of date of creation.
 
-![Profile Page Desktop](README_images/features/profile/profile-page.png)
-![Profile Page Mobile](README_images/features/profile/profile-page-m.png)
+![Profile Page Desktop](readme_images/features/profile/profile-page.png)
+
 
 -   #### Follow
 
@@ -574,21 +578,21 @@ descending order of date of creation.
 
     Of course, clicking the button again will simply reverse these effects.
 
-    ![Follow Button](README_images/features/profile/follow.png)
-    ![Unfollow Button](README_images/features/profile/unfollow.png)
+    ![Follow Button](readme_images/features/profile/follow.png)
+    ![Unfollow Button](readme_images/features/profile/unfollow.png)
 
 ### Update Profile
 
 To boost their profile visibility, users can update it by adding or modifying information. Simply go to the profile, click the settings spanner, and choose edit to access the update profile form, where additional details, including the profile image, can be added or updated.
 
-![Update Profile Form Desktop](README_images/features/profile/update-form.png)
-![Update Profile Form Mobile](README_images/features/profile/update-form-m.png)
+![Update Profile Form Desktop](readme_images/features/profile/update-form.png)
+
 
 ### Account Credentials
 
 For username or password updates, users can use the streamlined credentials form. Username validation prevents reuse, and passwords must match and meet length requirements.
 
-![Update Credentials Form](README_images/features/profile/credentials.png)
+![Update Credentials Form](readme_images/features/profile/credentials.png)
 
 [⏫ contents](#contents)
 
