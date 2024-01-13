@@ -63,7 +63,6 @@ i:hover {
   cursor: pointer;
   transition: color ease-in-out 0.3s;
   color: #df8600;
-  background-color: none;
 }
 
 .NavCol {
@@ -92,9 +91,9 @@ i:hover {
   .NavCol {
     padding-top: 10px;
 
-  i {
+    i {
     padding: 0px;
-  }
+    }
   }
 
   .MidCol {

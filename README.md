@@ -98,7 +98,7 @@ To get started with the Picagram app, follow these steps to clone the GitHub rep
     -   [Credits](#credits)
         -   [Tools](#tools)
         -   [Resources](#resources)
-        -   [Tutorials](#tutorials)
+
 
 ## Design Thinking
 
@@ -518,7 +518,7 @@ If a user is the owner of a post object, they will notice an additional settings
 
 If a user owns a Post, they will find an additional settings button on the post, distinguished by a spanner icon. Clicking this button displays the option to edit the post. Upon selecting the edit option, the user is directed to the edit post form, which is similar to the create post form but pre-populated with the necessary post details. Here, the user can update the post details.
 
-If users own the comment, they see an 'X' icon next to their own comments, enabling them to delete their comment directly without any additional confirmation.
+If users own the comment, they see an 'X' icon next to their own comments, enabling them to delete their comment directly with confirmation.
 
 ![Delete Confirmation Modal](readme_images/features/crud/modal.png)
 ![Settings Modal Delete](readme_images/features/crud/delete-option.png)
@@ -578,9 +578,6 @@ descending order of date of creation.
 
     Of course, clicking the button again will simply reverse these effects.
 
-    ![Follow Button](readme_images/features/profile/follow.png)
-    ![Unfollow Button](readme_images/features/profile/unfollow.png)
-
 ### Update Profile
 
 To boost their profile visibility, users can update it by adding or modifying information. Simply go to the profile, click the settings spanner, and choose edit to access the update profile form, where additional details, including the profile image, can be added or updated.
@@ -590,7 +587,7 @@ To boost their profile visibility, users can update it by adding or modifying in
 
 ### Account Credentials
 
-For username or password updates, users can use the streamlined credentials form. Username validation prevents reuse, and passwords must match and meet length requirements.
+For username or password updates, users can use the settings menu on the profile page. Username validation prevents reuse, and passwords must match and meet length requirements.
 
 ![Update Credentials Form](readme_images/features/profile/credentials.png)
 
@@ -673,6 +670,10 @@ When users encounter a non-existent page, NotFound.js comes into play as a funda
 
 The ShareModal.js component facilitates content sharing by providing users with a convenient way to share content across various platforms.
 
+### `ConfirmationModal.js`
+
+The "ConfirmationModal.js" component is a key element for confirming deletions of comments and posts, ensuring that users don't delete their comments or posts by accident.
+
 [⏫ contents](#contents)
 
 ## Contexts/ Hooks
@@ -738,6 +739,13 @@ got to
 -   #### [BUG: Posting doesnt post #21](https://github.com/jindah/picagram/issues/21)
 -   #### [BUG: Comment section not updating #22](https://github.com/jindah/picagram/issues/22)
 -   #### [BUG: Console warning about button as a descendant of button #25](https://github.com/jindah/picagram/issues/25)
+-   #### [BUG: Notifications page logs out user #28](https://github.com/jindah/picagram/issues/28)
+
+### Unresolved Bugs
+
+Due to time constraints, there is an unresolved bug that, while not directly impacting the overall functionality of the application, is non-essential for the MVP.
+
+-   #### [BUG: Sticky Navbar Not Maintaining Stickiness on Smaller Screens #24](https://github.com/jindah/picagram/issues/24)
 
 ## Deployment
 
@@ -830,9 +838,7 @@ deployed project.**
 
 ---
 
--   [Code Institute](http://www.codeinstitute.net/) 'Moments' Walkthrough was
-    used throughout the build as a reference and for specific use cases, which
-    are documented below:
+-   The initial setup and the basic structure of the application are based on the instructions from the [Code Institute       Moments](https://github.com/Code-Institute-Solutions/moments) walkthrough project. Most of the code from the walkthrough project has been customized and adapted to this project. I also added additional features not covered by the walkthrough project, such as Notifications and Bookmarking posts.
 
     -   Current user context hook (`src/contexts/CurrentUserContext.js`)
     -   The use of axios interceptors to refresh tokens
@@ -850,12 +856,20 @@ deployed project.**
 
 -   React Share for ShareModal [react-share](https://www.npmjs.com/package/react-share)
 
+-   Inspiration and code from [sonic-explorers](https://github.com/nacht-falter/sonic-explorers) to Notifications.
+
 **The below Docs were used extensively throughout the project build:**
 
 -   [React Docs](https://react.dev/reference/react)
 -   [React Router Docs](https://v5.reactrouter.com/web/api/Hooks/usehistory)
-    -   For assistance thoughout the project with built in hooks and router
-        elements (For example: `useHistory()`, `<Link />`, `useLocation()`,
-        `<NavLink />`)
 -   [React Router Bootstrap Docs](https://www.npmjs.com/package/react-router-bootstrap)
--   [React Bootstrap 4 Docs](https://react-bootstrap-v4.netlify.app/)
+-   [React Bootstrap 5 Docs](https://react-bootstrap.netlify.app/)
+
+### Acknowledgements
+
+- I would like to thank my Code Institute mentor Martina Terlevic for support and constructive advice.
+- I would like to thank the Code Institute tutors for their support.
+
+[⏫ contents](#contents)
+
+[⏩ Testing.md](testing.md)
