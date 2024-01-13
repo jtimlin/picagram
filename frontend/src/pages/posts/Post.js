@@ -61,7 +61,7 @@ const Post = (props) => {
   const handleDelete = async () => {
     try {
       await axiosRes.delete(`/posts/${id}/`);
-      history.push('/');
+      history.push(`/profiles/${currentUser?.profile_id}`);
     } catch (err) {
       // console.error(err);
     }
@@ -114,7 +114,7 @@ const Post = (props) => {
         }),
       }));
     } catch (err) {
-      console.error("Error bookmarking post:", err);
+      // console.error("Error bookmarking post:", err);
     }
   };
 
@@ -131,7 +131,7 @@ const Post = (props) => {
         }),
       }));
     } catch (err) {
-      console.error("Error removing bookmark:", err);
+      // console.error("Error removing bookmark:", err);
     }
   };
 

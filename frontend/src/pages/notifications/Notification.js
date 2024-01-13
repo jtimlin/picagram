@@ -29,6 +29,7 @@ const Notification = (props) => {
     setShowModal(true);
   };
 
+  // function to handle notification is read
   const handleSetRead = async () => {
     try {
       await axiosRes.patch(`/notifications/${id}`, { is_read: !isRead });
@@ -43,6 +44,7 @@ const Notification = (props) => {
     }
   };
 
+  // function to handle deletion of notification
   const handleDelete = async () => {
     try {
       await axiosRes.delete(`/notifications/${id}`);

@@ -26,6 +26,10 @@ function PostsPage({ message, filter = "" }) {
   const [query, setQuery] = useState("");
   const currentUser = useCurrentUser();
 
+  const location = useLocation();
+  const isBookmarkedPage = location.pathname.includes('/bookmarked');
+  const isFeedPage = location.pathname.includes('/feed');
+
   // UseEffect to fetch posts data when filter, query, or pathname changes
   useEffect(() => {
     const fetchPosts = async () => {
@@ -70,6 +74,7 @@ function PostsPage({ message, filter = "" }) {
 
         {hasLoaded ? (
           <>
+            {isBookmarkedPage ? <h4>Your Saved Posts</h4> : isFeedPage ? <h4>Your Feed</h4> : null}
             {posts.results.length ? (
               // Render InfiniteScroll to display posts with lazy loading
               <InfiniteScroll

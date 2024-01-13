@@ -15,6 +15,7 @@ const NotificationPage = ({ showMessage }) => {
   const currentUser = useCurrentUser();
   const [hasLoaded, setHasLoaded] = useState(false);
 
+  // gets the notification data
   useEffect(() => {
     const handleMount = async () => {
       try {
@@ -29,6 +30,7 @@ const NotificationPage = ({ showMessage }) => {
     handleMount();
   }, []);
 
+  // renders notifications with infinite scroll
   return !currentUser ? (
     <NotFound />
   ) : (
