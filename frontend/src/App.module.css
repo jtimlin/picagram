@@ -103,4 +103,8 @@ i:hover {
   .ProfilesCol {
     padding-top: 10px;
   }
+
+  .Content {
+    padding: 12px;
+  }
 }

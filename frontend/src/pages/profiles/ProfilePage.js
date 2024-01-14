@@ -120,7 +120,7 @@ function ProfilePage() {
       <p className="text-center">{profile?.owner}'s posts</p>
       <hr />
       <Container>
-        <Row xs={2} md={2} lg={2} className="g-4">
+        <Row xs={2} md={2} lg={2} className="g-1">
           {/* Display profile posts */}
           {profilePosts.results.map((post) => (
             <Col key={post.id}>
