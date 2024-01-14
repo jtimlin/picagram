@@ -22,6 +22,10 @@ React, React-Bootstrap, JSX, CSS, HTML, and axios for handling API requests.
 Backend:
 Django REST framework with Python.
 
+## Frontend commits
+
+The frontend of this app was developed quite a bit in its own repository before combining the frontend and backend together. Those commits can be found at: [picagram-frontend](https://github.com/jindah/picagram-frontend)
+
 ## Getting Started
 
 To get started with the Picagram app, follow these steps to clone the GitHub repository locally and set up other dependencies:

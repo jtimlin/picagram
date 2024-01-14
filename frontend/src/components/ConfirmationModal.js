@@ -2,6 +2,7 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import ButtonGroup from "react-bootstrap/esm/ButtonGroup";
 
+
 const ConfirmationModal = ({ handleMethod, show, setShow, body, type }) => {
   return (
     <>

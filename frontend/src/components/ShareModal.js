@@ -13,19 +13,19 @@ const ShareModal = ({ isOpen, onClose, shareUrl, title }) => {
           <div>
             <FacebookShareButton url={shareUrl} quote={title}>
               <div className={styles.ShareButtonDiv}>
-                <i className="fa-brands fa-facebook-f" />
+                <i className="fa-brands fa-facebook-f" data-testid="share-modal-facebook"/>
               </div>
             </FacebookShareButton>
 
             <TwitterShareButton url={shareUrl} title={title}>
               <div className={styles.ShareButtonDiv}>
-                <i className="fa-brands fa-x-twitter" />
+                <i className="fa-brands fa-x-twitter" data-testid="share-modal-x"/>
               </div>
             </TwitterShareButton>
 
             <WhatsappShareButton url={shareUrl} title={title}>
               <div className={styles.ShareButtonDiv}>
-                <i className="fa-brands fa-whatsapp" />
+                <i className="fa-brands fa-whatsapp" data-testid="share-modal-whatsapp"/>
               </div>
             </WhatsappShareButton>
 
