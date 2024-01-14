@@ -54,7 +54,7 @@ To get started with the Picagram app, follow these steps to clone the GitHub rep
             -   [Fonts](#fonts)
             -   [Icons](#icons)
             -   [Logo](#logo)
-    -   [Database ERD](#database-erd)
+    -   [Database](#database)
     -   [Development](#deployment)
         -   [Agile Design](#agile-design)
             -   [Github Issues](#github-issues)
@@ -246,6 +246,53 @@ The logo for the Picagram app features a unique design created using the 'Grand 
 
 [⏫ contents](#contents)
 
+## Database
+
+### Models:
+
+#### Bookmark:
+This model captures bookmarks to a post. It is linked to the User, Post, and Comment models. It also records the time when each like event was created.
+
+#### Notifications: 
+The notifications model is designed to automatically generate notifications when users engage in certain actions such as liking, commenting, or adding a post. These notifications aim to keep users informed about relevant activities within the platform. The system utilizes signals to trigger the creation of notifications, enhancing the user experience by providing real-time updates and ensuring users stay informed about interactions on the platform.
+
+#### Comments: 
+This model represents comments made by users. It is associated with the User model (as the owner of the comment) and the Post model. In addition to the content of the comment, it keeps track of the times when each comment was created and last updated.
+
+#### Followers: 
+This model maintains the follower-following relationships between users. It is related to the User model twice, once for the owner of the follow (the follower) and once for the followed user. A timestamp of each follow event is also stored.
+
+#### Likes: 
+This model captures the likes given by users to a post. It is linked to the User, Post, and Comment models. It also records the time when each like event was created.
+
+#### Posts: 
+This model represents the posts made by users. It is related to the User model as the owner of the post. It keeps track of the times when each post was created and last updated, along with the content of the post including the title, image, and location information.
+
+#### Profiles: 
+User model with profile information such as their name, profile image, and other personal details. It also keeps timestamps of when each profile was created and last updated. 
+
+Each of these models serves a unique purpose and together they support a range of features in your application, from user registration and social networking to content creation and curation.
+
+
+### Languages
+- Python
+
+### Frameworks
+- Django REST framework: A high-level Python web framework used for building the API.
+
+### Database
+- ElephantSQL: ElephantSQL is a PostgreSQL database as a service. It is used as the database for the project, providing a reliable and scalable storage solution for the application's data.
+
+### Supporting Libraries and Packages
+- cloudinary, django-cloudinary-storage: Used for managing the storage and delivery of images through Cloudinary, a cloud-based service.
+- dj-database-url: Utility to help you load your database into your dictionary from the DATABASE_URL environment variable.
+- dj-rest-auth, Django-allauth, djangorestframework-simplejwt, PyJWT, oauthlib, requests-oauthlib, python3-openid: These libraries are used for managing user authentication, providing support for JWT tokens, OAuth and OpenID.
+- Django, djangorestframework, django-filter: These are core components of the Django web framework, used for building the backend of the Travel Tickr application.
+- gunicorn: A Python WSGI HTTP server for UNIX, used in deploying the application.
+- Pillow: An imaging library in Python, allowing support for opening, manipulating, and saving many different image file formats.
+- psycopg2: PostgreSQL adapter for Python, enabling Python to connect to the PostgreSQL database.
+- sqlparse: A non-validating SQL parser module for Python, it provides support for parsing, splitting and formatting SQL statements.
+
 ## Database ERD
 
 An entity relationship diagram was created to assist in the visualization of the
@@ -254,6 +301,10 @@ be needed in order to provide the functionality desired within the application.
 Below is an image of the Created ERD with the relationships between models.
 
 ![Picagram API ERD](readme_images/api-erd.png)
+
+## Testing
+All tests for the Picagram have been passed, demonstrating its readiness for deployment and public use. See [full testing documentation](testing.md).
+
 
 [⏫ contents](#contents)
 
