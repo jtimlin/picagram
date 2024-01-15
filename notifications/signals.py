@@ -78,3 +78,4 @@ def create_new_post_notification(sender, instance, created, **kwargs):
             }
 
             create_notification(**data)
+

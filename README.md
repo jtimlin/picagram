@@ -911,7 +911,7 @@ deployed project.**
 
 -   React Share for ShareModal [react-share](https://www.npmjs.com/package/react-share)
 
--   Inspiration and code from [sonic-explorers](https://github.com/nacht-falter/sonic-explorers) to Notifications.
+-   Inspiration and code from [sonic-explorers](https://github.com/nacht-falter/sonic-explorers) to Notifications and ConfirmationModal both have been changed and suited to Picagram.
 
 **The below Docs were used extensively throughout the project build:**
 
