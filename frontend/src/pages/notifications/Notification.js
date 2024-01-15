@@ -15,7 +15,7 @@ import styles from "../../styles/Notifications.module.css"
 const Notification = (props) => {
   const {
     id,
-    profile_image: senderAvatar,
+    profile_image: profileAvatar,
     created_at: sentAt, 
     item_id: itemId,
     is_read: isRead,
@@ -29,7 +29,12 @@ const Notification = (props) => {
     setShowModal(true);
   };
 
-  // function to handle notification is read
+  // The code and inspiration for the notifications function are from sonic-explorers and likes.
+  // The code has been modified and adapted for Picagram.
+  // The link can be found in the sources section of the readme.
+  // The code structure is similar to the likes function.
+
+  // The function to handle notifications.
   const handleSetRead = async () => {
     try {
       await axiosRes.patch(`/notifications/${id}`, { is_read: !isRead });
@@ -44,7 +49,7 @@ const Notification = (props) => {
     }
   };
 
-  // function to handle deletion of notification
+  // function to handle deletion of notification. Code similar to likes function.
   const handleDelete = async () => {
     try {
       await axiosRes.delete(`/notifications/${id}`);
@@ -98,7 +103,7 @@ const Notification = (props) => {
         </Card.Header>
         <Card.Body>
           <Card.Text>
-            <Avatar src={senderAvatar} height={30} /> {content}{category !== "follow" && ( <Link to={`/posts/${itemId}`} className="ms-sm-2">• Go to post...</Link> )}
+            <Avatar src={profileAvatar} height={30} /> {content}{category !== "follow" && ( <Link to={`/posts/${itemId}`} className="ms-sm-2">• Go to post...</Link> )}
           </Card.Text>
         </Card.Body>
       </Card>

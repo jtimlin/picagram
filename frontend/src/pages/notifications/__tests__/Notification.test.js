@@ -21,8 +21,15 @@ const renderLoggedInNotificationPage = () => {
   );
 };
 
+test("renders notifications title to logged in users", async () => {
+  renderLoggedInNotificationPage();
+  const loggedInMessage = await screen.findByText("Notifications");
+  expect(loggedInMessage).toBeInTheDocument();
+});
+
 test("renders logged-out message for logged-out users", async () => {
   renderLoggedOutNotificationPage();
   const loggedOutMessage = await screen.findByText("Sorry, the page you're looking for doesn't exist");
   expect(loggedOutMessage).toBeInTheDocument();
 });
+

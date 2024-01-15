@@ -854,7 +854,7 @@ GitHub'.**
 **5. Once connected to GitHub, search for the repository in the 'Connect to
 GitHub' section, and click 'Connect'.**
 
-**6. I chose to enable 'Automatic Deploys'. In order to do so click the 'Enable
+**6. Optional to enable 'Automatic Deploys'. In order to do so click the 'Enable
 Automatic Deploys' button.**
 
 **7. For manual deployment use the 'Manual Deploy' section by clicking 'Deploy

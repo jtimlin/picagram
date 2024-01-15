@@ -15,7 +15,7 @@ const NotificationPage = ({ showMessage }) => {
   const currentUser = useCurrentUser();
   const [hasLoaded, setHasLoaded] = useState(false);
 
-  // gets the notification data
+  // gets the notification data. code similar to postspage.
   useEffect(() => {
     const handleMount = async () => {
       try {
